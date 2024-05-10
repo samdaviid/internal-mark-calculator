@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Marks Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Internal Marks Calculator</h1>
+        <p>Enter your scores (out of their respective maximum marks):</p>
+        <form id="marksForm">
+            <label for="cat1">CAT 1 (out of 60): </label>
+            <input type="number" id="cat1" required><br>
+            <label for="cat2">CAT 2 (out of 50): </label>
+            <input type="number" id="cat2" required><br>
+            <label for="cat3">CAT 3 (out of 50): </label>
+            <input type="number" id="cat3" required><br>
+            <label for="assignment">Assignment (out of 50): </label>
+            <input type="number" id="assignment" required><br>
+            <button type="button" id="calculateBtn">Calculate Marks</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <footer>
+        <p>Developed by <a href="https://github.com/samdaviid" target="_blank">Samdavid</a></p>
+        <p class="copyright">&copy; 2024 All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
