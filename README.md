@@ -1,2 +1,2 @@
 # internal-mark-calculator
-Efficiently calculate internal marks for students with this simple HTML, CSS, and JavaScript tool. Input CAT scores, get final internal marks out of 40. Ideal for academic use.
+This Internal Marks Calculator is a simple yet effective tool for students to calculate their internal marks based on scores obtained in CAT 1, CAT 2, CAT 3, and assignments. It allows users to input their scores, automatically converts CAT 1 marks if necessary, and provides the final internal marks out of 40. Developed with HTML, CSS, and JavaScript, it offers a user-friendly interface and accurate calculations. Ideal for students and educators alike, it streamlines the process of tracking and managing internal assessment scores.
