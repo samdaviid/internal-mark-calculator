@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Marks Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+        footer {
+            margin-top: 50px;
+            color: #666;
+        }
+        footer a {
+            color: #666;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .copyright {
+            color: #666;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Internal Marks Calculator</h1>
+        <p>Enter your scores (out of their respective maximum marks):</p>
+        <form id="marksForm">
+            <label for="cat1">CAT 1 (out of 60): </label>
+            <input type="number" id="cat1" required><br>
+            <label for="cat2">CAT 2 (out of 50): </label>
+            <input type="number" id="cat2" required><br>
+            <label for="cat3">CAT 3 (out of 50): </label>
+            <input type="number" id="cat3" required><br>
+            <label for="assignment">Assignment (out of 50): </label>
+            <input type="number" id="assignment" required><br>
+            <button type="button" onclick="calculateMarks()">Calculate Marks</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <footer>
+        <p>Developed by <a href="https://github.com/samdaviid" target="_blank">Samdavid</a></p>
+        <p class="copyright">&copy; 2024 All rights reserved.</p>
+    </footer>
+
+    <script>
+        function calculateMarks() {
+            // Get user input for scores
+            const cat1Score = parseInt(document.getElementById("cat1").value);
+            const cat2Score = parseInt(document.getElementById("cat2").value);
+            const cat3Score = parseInt(document.getElementById("cat3").value);
+            const assignmentScore = parseInt(document.getElementById("assignment").value);
+
+            // Convert CAT 1 score (if originally out of 60)
+            const convertedCat1 = cat1Score * (50 / 60);
+
+            // Calculate total internal marks (out of 200)
+            const internalMarks = convertedCat1 + cat2Score + cat3Score + assignmentScore;
+
+            // Calculate scaling factor
+            const scalingFactor = 40 / 200;
+
+            // Calculate converted marks (out of 40)
+            const convertedMarks = internalMarks * scalingFactor;
+
+            // Display the result
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Your internal marks is: ${convertedMarks.toFixed(2)} (out of 40)`;
+        }
+    </script>
+</body>
+</html>
